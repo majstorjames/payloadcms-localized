@@ -22,6 +22,6 @@ export const Logo = () => {
     //   src={logo} // Use the imported logo as the src
     // />
 
-    <p className="text-2xl inline font-bold text-gray-800 dark:text-white">WEB<p className="text-2xl font-thin inline text-gray-800 dark:text-white">SITE</p></p>
+    <span className="text-2xl inline font-bold text-gray-800 dark:text-white">WEB<span className="text-2xl font-thin inline text-gray-800 dark:text-white">SITE</span></span>
   )
 }

@@ -23,6 +23,7 @@ import localization from '@/i18n/localization'
 
 type Args = {
   children: React.ReactNode
+
   params: Promise<{
     locale: TypedLocale
   }>
@@ -31,7 +32,7 @@ type Args = {
 export default async function RootLayout({ children, params }: Args) {
   const { locale } = await params
   const currentLocale = localization.locales.find((loc) => loc.code === locale)
-  const direction = currentLocale?.rtl ? 'rtl' : 'ltr'
+  //const direction = currentLocale?.rtl ? 'rtl' : 'ltr'
 
   if (!routing.locales.includes(locale as any)) {
     notFound()
@@ -45,7 +46,7 @@ export default async function RootLayout({ children, params }: Args) {
     <html
       className={cn(GeistSans.variable, GeistMono.variable)}
       lang={locale}
-      dir={direction}
+      //dir={direction}
       suppressHydrationWarning
     >
       <head>

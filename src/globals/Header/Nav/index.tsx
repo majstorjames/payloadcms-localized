@@ -14,7 +14,7 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
   const t = useTranslations()
 
   return (
-    <nav className="flex gap-3 items-center">
+    <nav className="flex gap-5 items-center">
       {navItems.map(({ link }, i) => {
         return <CMSLink key={i} {...link} appearance="link" />
       })}

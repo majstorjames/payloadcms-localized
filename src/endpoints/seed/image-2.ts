@@ -4,7 +4,7 @@ export const image2 = (locale: 'en' | 'hr'): Omit<Media, 'createdAt' | 'id' | 'u
   alt:
     locale === 'en'
       ? 'Curving abstract shapes with an orange and blue gradient'
-      : 'Formas abstractas curvas con un gradiente naranja y azul',
+      : 'Zakrivljeni apstraktni oblici s narančasto-plavim gradijentom',
   caption: {
     root: {
       type: 'root',
@@ -18,7 +18,7 @@ export const image2 = (locale: 'en' | 'hr'): Omit<Media, 'createdAt' | 'id' | 'u
               format: 0,
               mode: 'normal',
               style: '',
-              text: locale === 'en' ? 'Photo by ' : 'Fotografía por ',
+              text: locale === 'en' ? 'Photo by ' : 'Fotograf: ',
               version: 1,
             },
             {
@@ -50,7 +50,7 @@ export const image2 = (locale: 'en' | 'hr'): Omit<Media, 'createdAt' | 'id' | 'u
               format: 0,
               mode: 'normal',
               style: '',
-              text: locale === 'en' ? ' on Unsplash.' : ' en Unsplash.',
+              text: locale === 'en' ? ' on Unsplash.' : ' na Unsplashu.',
               version: 1,
             },
           ],
