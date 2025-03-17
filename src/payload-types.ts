@@ -105,7 +105,7 @@ export interface Config {
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
-  locale: 'en' | 'hr' | 'es';
+  locale: 'en' | 'hr';
   user: User & {
     collection: 'users';
   };

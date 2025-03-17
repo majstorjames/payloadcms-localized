@@ -1,6 +1,6 @@
 import type { Form } from '@/payload-types'
 
-export const contactForm = (locale: 'en' | 'es'): Partial<Form> => ({
+export const contactForm = (locale: 'en' | 'hr'): Partial<Form> => ({
   confirmationMessage: {
     root: {
       type: 'root',
@@ -17,7 +17,7 @@ export const contactForm = (locale: 'en' | 'es'): Partial<Form> => ({
               text:
                 locale === 'en'
                   ? 'The contact form has been submitted successfully.'
-                  : 'El formulario de contacto ha sido enviado con éxito.',
+                  : 'Kontakt forma je uspješno poslana.',
               version: 1,
             },
           ],
@@ -56,7 +56,7 @@ export const contactForm = (locale: 'en' | 'es'): Partial<Form> => ({
                   text:
                     locale === 'en'
                       ? 'Your contact form submission was successfully received.'
-                      : 'Su envío de formulario de contacto se recibió con éxito.',
+                      : 'Vaša kontakt forma je uspješno primljena.',
                   version: 1,
                 },
               ],
@@ -73,7 +73,7 @@ export const contactForm = (locale: 'en' | 'es'): Partial<Form> => ({
           version: 1,
         },
       },
-      subject: locale === 'en' ? "You've received a new message." : 'Ha recibido un nuevo mensaje.',
+      subject: locale === 'en' ? "You've received a new message." : 'Primili ste novu poruku.',
     },
   ],
   fields: [
@@ -81,7 +81,7 @@ export const contactForm = (locale: 'en' | 'es'): Partial<Form> => ({
       name: 'full-name',
       blockName: 'full-name',
       blockType: 'text',
-      label: locale === 'en' ? 'Full Name' : 'Nombre completo',
+      label: locale === 'en' ? 'Full Name' : 'Ime i prezime',
       required: true,
       width: 100,
     },
@@ -97,7 +97,7 @@ export const contactForm = (locale: 'en' | 'es'): Partial<Form> => ({
       name: 'phone',
       blockName: 'phone',
       blockType: 'number',
-      label: locale === 'en' ? 'Phone' : 'Teléfono',
+      label: locale === 'en' ? 'Phone' : 'Broj telefona',
       required: false,
       width: 100,
     },
@@ -105,13 +105,13 @@ export const contactForm = (locale: 'en' | 'es'): Partial<Form> => ({
       name: 'message',
       blockName: 'message',
       blockType: 'textarea',
-      label: locale === 'en' ? 'Message' : 'Mensaje',
+      label: locale === 'en' ? 'Message' : 'Poruka',
       required: true,
       width: 100,
     },
   ],
   redirect: undefined,
-  submitButtonLabel: locale === 'en' ? 'Submit' : 'Enviar',
-  title: locale === 'en' ? 'Contact Form' : 'Formulario de contacto',
+  submitButtonLabel: locale === 'en' ? 'Submit' : 'Pošalji',
+  title: locale === 'en' ? 'Contact Form' : 'Kontakt forma',
   updatedAt: '2023-01-12T21:47:41.374Z',
 })

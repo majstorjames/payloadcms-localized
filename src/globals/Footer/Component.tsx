@@ -17,13 +17,14 @@ export async function Footer({ locale }: { locale: TypedLocale }) {
     <footer className="border-t border-border bg-black dark:bg-card text-white">
       <div className="container py-8 gap-8 flex flex-col md:flex-row md:justify-between">
         <Link className="flex items-center" href="/">
-          <picture>
+          <span className="text-2xl inline font-bold dark:text-white ">WEB<span className="text-2xl font-thin inline dark:text-white ">SITE</span></span>
+          {/* <picture>
             <img
               alt="Payload Logo"
               className="max-w-[6rem] invert-0"
               src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
             />
-          </picture>
+          </picture> */}
         </Link>
 
         <div className="flex flex-col-reverse items-start md:flex-row gap-4 md:items-center">

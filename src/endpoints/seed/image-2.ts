@@ -1,6 +1,6 @@
 import type { Media } from '@/payload-types'
 
-export const image2 = (locale: 'en' | 'es'): Omit<Media, 'createdAt' | 'id' | 'updatedAt'> => ({
+export const image2 = (locale: 'en' | 'hr'): Omit<Media, 'createdAt' | 'id' | 'updatedAt'> => ({
   alt:
     locale === 'en'
       ? 'Curving abstract shapes with an orange and blue gradient'

@@ -16,10 +16,12 @@ import logo from './logo.svg' // Import the logo.svg file
 export const Logo = () => {
   return (
     /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Payload Logo"
-      className="max-w-[9.375rem] invert dark:invert-0"
-      src={logo} // Use the imported logo as the src
-    />
+    // <img
+    //   alt="Payload Logo"
+    //   className="max-w-[9.375rem] invert dark:invert-0"
+    //   src={logo} // Use the imported logo as the src
+    // />
+
+    <p className="text-2xl inline font-bold text-gray-800 dark:text-white">WEB<p className="text-2xl font-thin inline text-gray-800 dark:text-white">SITE</p></p>
   )
 }

@@ -9,9 +9,9 @@ import { contact as contactPageData } from './contact-page'
 import { home } from './home'
 import { image1 } from './image-1'
 import { image2 } from './image-2'
-import { post1, post1_es } from './post-1'
-import { post2, post2_es } from './post-2'
-import { post3, post3_es } from './post-3'
+import { post1, post1_hr } from './post-1'
+import { post2, post2_hr } from './post-2'
+import { post3, post3_hr } from './post-3'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -123,8 +123,8 @@ export const seed = async ({
   await payload.update({
     collection: 'media',
     id: image1Doc.id,
-    data: image1('es'),
-    locale: 'es',
+    data: image1('hr'),
+    locale: 'hr',
     filePath: path.resolve(dirname, 'image-post1.webp'),
     req,
   })
@@ -139,8 +139,8 @@ export const seed = async ({
   await payload.update({
     collection: 'media',
     id: image2Doc.id,
-    data: image2('es'),
-    locale: 'es',
+    data: image2('hr'),
+    locale: 'hr',
     filePath: path.resolve(dirname, 'image-post2.webp'),
     req,
   })
@@ -155,8 +155,8 @@ export const seed = async ({
   await payload.update({
     collection: 'media',
     id: image3Doc.id,
-    data: image2('es'),
-    locale: 'es',
+    data: image2('hr'),
+    locale: 'hr',
     filePath: path.resolve(dirname, 'image-post3.webp'),
     req,
   })
@@ -171,8 +171,8 @@ export const seed = async ({
   await payload.update({
     collection: 'media',
     id: imageHomeDoc.id,
-    data: image2('es'),
-    locale: 'es',
+    data: image2('hr'),
+    locale: 'hr',
     filePath: path.resolve(dirname, 'image-hero1.webp'),
     req,
   })
@@ -204,9 +204,9 @@ export const seed = async ({
   await payload.update({
     collection: 'categories',
     id: technologyCategory.id,
-    locale: 'es',
+    locale: 'hr',
     data: {
-      title: 'Tecnología',
+      title: 'Tehnologija',
     },
     req,
   })
@@ -222,9 +222,9 @@ export const seed = async ({
   await payload.update({
     collection: 'categories',
     id: newsCategory.id,
-    locale: 'es',
+    locale: 'hr',
     data: {
-      title: 'Noticias',
+      title: 'Vijesti',
     },
     req,
   })
@@ -240,9 +240,9 @@ export const seed = async ({
   await payload.update({
     collection: 'categories',
     id: financeCategory.id,
-    locale: 'es',
+    locale: 'hr',
     data: {
-      title: 'Finanzas',
+      title: 'Financije',
     },
     req,
   })
@@ -258,9 +258,9 @@ export const seed = async ({
   await payload.update({
     collection: 'categories',
     id: designCategory.id,
-    locale: 'es',
+    locale: 'hr',
     data: {
-      title: 'Diseño',
+      title: 'Dizajn',
     },
     req,
   })
@@ -276,9 +276,9 @@ export const seed = async ({
   await payload.update({
     collection: 'categories',
     id: softwareCategory.id,
-    locale: 'es',
+    locale: 'hr',
     data: {
-      title: 'Software',
+      title: 'Softver',
     },
     req,
   })
@@ -294,9 +294,9 @@ export const seed = async ({
   await payload.update({
     collection: 'categories',
     id: engineeringCategory.id,
-    locale: 'es',
+    locale: 'hr',
     data: {
-      title: 'Ingeniería',
+      title: 'Inženjerstvo',
     },
     req,
   })
@@ -322,12 +322,12 @@ export const seed = async ({
     collection: 'posts',
     id: post1Doc.id,
     data: JSON.parse(
-      JSON.stringify({ ...post1_es, categories: [technologyCategory.id] })
+      JSON.stringify({ ...post1_hr, categories: [technologyCategory.id] })
         .replace(/"\{\{IMAGE_1\}\}"/g, String(image1ID))
         .replace(/"\{\{IMAGE_2\}\}"/g, String(image2ID))
         .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID)),
     ),
-    locale: 'es',
+    locale: 'hr',
     req,
   })
 
@@ -346,12 +346,12 @@ export const seed = async ({
     collection: 'posts',
     id: post2Doc.id,
     data: JSON.parse(
-      JSON.stringify({ ...post2_es, categories: [newsCategory.id] })
+      JSON.stringify({ ...post2_hr, categories: [newsCategory.id] })
         .replace(/"\{\{IMAGE_1\}\}"/g, String(image2ID))
         .replace(/"\{\{IMAGE_2\}\}"/g, String(image3ID))
         .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID)),
     ),
-    locale: 'es',
+    locale: 'hr',
     req,
   })
 
@@ -370,12 +370,12 @@ export const seed = async ({
     collection: 'posts',
     id: post3Doc.id,
     data: JSON.parse(
-      JSON.stringify({ ...post3_es, categories: [financeCategory.id] })
+      JSON.stringify({ ...post3_hr, categories: [financeCategory.id] })
         .replace(/"\{\{IMAGE_1\}\}"/g, String(image3ID))
         .replace(/"\{\{IMAGE_2\}\}"/g, String(image1ID))
         .replace(/"\{\{AUTHOR\}\}"/g, String(demoAuthorID)),
     ),
-    locale: 'es',
+    locale: 'hr',
     req,
   })
 
@@ -422,9 +422,9 @@ export const seed = async ({
   await payload.update({
     collection: 'pages',
     id: homePage.id,
-    locale: 'es',
+    locale: 'hr',
     data: JSON.parse(
-      JSON.stringify(home('es'))
+      JSON.stringify(home('hr'))
         .replace(/"\{\{IMAGE_1\}\}"/g, String(imageHomeID))
         .replace(/"\{\{IMAGE_2\}\}"/g, String(image2ID)),
     ),
@@ -440,25 +440,25 @@ export const seed = async ({
     req,
   })
 
-  const contactFormData_es = JSON.parse(JSON.stringify(contactFormData('es')))
+  const contactFormData_hr = JSON.parse(JSON.stringify(contactFormData('hr')))
   await payload.update({
     collection: 'forms',
     id: contactForm.id,
-    locale: 'es',
+    locale: 'hr',
     data: {
-      redirect: contactFormData_es.redirect,
-      title: contactFormData_es.title,
+      redirect: contactFormData_hr.redirect,
+      title: contactFormData_hr.title,
       id: contactForm.id,
-      submitButtonLabel: contactFormData_es.submitButtonLabel,
-      confirmationType: contactFormData_es.confirmationType,
-      createdAt: contactFormData_es.createdAt,
-      updatedAt: contactFormData_es.updatedAt,
-      confirmationMessage: contactFormData_es.confirmationMessage,
-      fields: contactFormData_es.fields?.map((field, index) => ({
+      submitButtonLabel: contactFormData_hr.submitButtonLabel,
+      confirmationType: contactFormData_hr.confirmationType,
+      createdAt: contactFormData_hr.createdAt,
+      updatedAt: contactFormData_hr.updatedAt,
+      confirmationMessage: contactFormData_hr.confirmationMessage,
+      fields: contactFormData_hr.fields?.map((field, index) => ({
         id: contactForm.fields![index].id,
         ...field,
       })),
-      emails: contactFormData_es.emails?.map((email, index) => ({
+      emails: contactFormData_hr.emails?.map((email, index) => ({
         id: contactForm.emails![index].id,
         ...email,
       })),
@@ -488,9 +488,9 @@ export const seed = async ({
   await payload.update({
     collection: 'pages',
     id: contactPage.id,
-    locale: 'es',
+    locale: 'hr',
     data: JSON.parse(
-      JSON.stringify(contactPageData('es')).replace(
+      JSON.stringify(contactPageData('hr')).replace(
         /"\{\{CONTACT_FORM_ID\}\}"/g,
         String(contactFormID),
       ),
@@ -531,7 +531,7 @@ export const seed = async ({
 
   await payload.updateGlobal({
     slug: 'header',
-    locale: 'es',
+    locale: 'hr',
     data: {
       navItems: [
         {
@@ -539,7 +539,7 @@ export const seed = async ({
           link: {
             type: 'custom',
             url: '/',
-            label: 'Inicio',
+            label: 'Početna',
           },
         },
         {
@@ -550,7 +550,7 @@ export const seed = async ({
               relationTo: 'pages',
               value: contactPage.id,
             },
-            label: 'Contacto',
+            label: 'Kontakt',
           },
         },
       ],
@@ -594,7 +594,7 @@ export const seed = async ({
   })
   await payload.updateGlobal({
     slug: 'footer',
-    locale: 'es',
+    locale: 'hr',
     data: {
       navItems: [
         {
@@ -602,7 +602,7 @@ export const seed = async ({
           link: {
             type: 'custom',
             url: '/admin',
-            label: 'Panel',
+            label: 'Administracijska ploča',
           },
         },
         {
@@ -610,7 +610,7 @@ export const seed = async ({
           link: {
             type: 'custom',
             url: 'https://github.com/payloadcms/payload/tree/beta/templates/website',
-            label: 'Código fuente',
+            label: 'Izvorni kod',
           },
         },
         {

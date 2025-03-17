@@ -227,7 +227,234 @@ export const post2: Partial<Post> = {
   title: 'Global Gaze: Beyond the Headlines',
 }
 
-export const post2_es: Partial<Post> = {
+// export const post2_es: Partial<Post> = {
+//   slug: 'global-gaze',
+//   slugLock: false,
+//   _status: 'published',
+//   // @ts-ignore
+//   authors: ['{{AUTHOR}}'],
+//   content: {
+//     root: {
+//       type: 'root',
+//       children: [
+//         {
+//           type: 'heading',
+//           children: [
+//             {
+//               type: 'text',
+//               detail: 0,
+//               format: 0,
+//               mode: 'normal',
+//               style: '',
+//               text: 'Explora lo no contado e ignorado. Una visión ampliada de los rincones del mundo, donde cada historia merece su foco de atención.',
+//               version: 1,
+//             },
+//           ],
+//           direction: 'ltr',
+//           format: '',
+//           indent: 0,
+//           tag: 'h2',
+//           version: 1,
+//         },
+//         {
+//           type: 'block',
+//           fields: {
+//             blockName: 'Disclaimer',
+//             blockType: 'banner',
+//             content: {
+//               root: {
+//                 type: 'root',
+//                 children: [
+//                   {
+//                     type: 'paragraph',
+//                     children: [
+//                       {
+//                         type: 'text',
+//                         detail: 0,
+//                         format: 1,
+//                         mode: 'normal',
+//                         style: '',
+//                         text: 'Aviso legal:',
+//                         version: 1,
+//                       },
+//                       {
+//                         type: 'text',
+//                         detail: 0,
+//                         format: 0,
+//                         mode: 'normal',
+//                         style: '',
+//                         text: ' Este contenido es ficticio y solo para fines demostrativos. Para editar esta publicación, ',
+//                         version: 1,
+//                       },
+//                       {
+//                         type: 'link',
+//                         children: [
+//                           {
+//                             type: 'text',
+//                             detail: 0,
+//                             format: 0,
+//                             mode: 'normal',
+//                             style: '',
+//                             text: 'dirígete al panel de administración.',
+//                             version: 1,
+//                           },
+//                         ],
+//                         direction: 'ltr',
+//                         fields: {
+//                           linkType: 'custom',
+//                           newTab: true,
+//                           url: '/admin',
+//                         },
+//                         format: '',
+//                         indent: 0,
+//                         version: 3,
+//                       },
+//                     ],
+//                     direction: 'ltr',
+//                     format: '',
+//                     indent: 0,
+//                     textFormat: 1,
+//                     version: 1,
+//                   },
+//                 ],
+//                 direction: 'ltr',
+//                 format: '',
+//                 indent: 0,
+//                 version: 1,
+//               },
+//             },
+//             style: 'info',
+//           },
+//           format: '',
+//           version: 2,
+//         },
+//         {
+//           type: 'heading',
+//           children: [
+//             {
+//               type: 'text',
+//               detail: 0,
+//               format: 0,
+//               mode: 'normal',
+//               style: '',
+//               text: 'El Poder de la Resiliencia: Historias de Recuperación y Esperanza',
+//               version: 1,
+//             },
+//           ],
+//           direction: 'ltr',
+//           format: '',
+//           indent: 0,
+//           tag: 'h2',
+//           version: 1,
+//         },
+//         {
+//           type: 'paragraph',
+//           children: [
+//             {
+//               type: 'text',
+//               detail: 0,
+//               format: 0,
+//               mode: 'normal',
+//               style: '',
+//               text: 'A lo largo de la historia, las regiones de todo el mundo han enfrentado el devastador impacto de desastres naturales, la turbulencia de la agitación política y las difíciles secuelas de las crisis económicas. En estos momentos de profunda crisis, emerge una fuerza a menudo subestimada: la indomable resiliencia del espíritu humano. Estas no son solo historias de mera supervivencia, sino relatos de comunidades forjando lazos, uniéndose con un propósito común y demostrando una capacidad innata para superar.',
+//               version: 1,
+//             },
+//           ],
+//           direction: 'ltr',
+//           format: '',
+//           indent: 0,
+//           textFormat: 0,
+//           version: 1,
+//         },
+//         {
+//           type: 'block',
+//           fields: {
+//             blockName: '',
+//             blockType: 'mediaBlock',
+//             media: '{{IMAGE_2}}',
+//             position: 'default',
+//           },
+//           format: '',
+//           version: 2,
+//         },
+//         {
+//           type: 'paragraph',
+//           children: [
+//             {
+//               type: 'text',
+//               detail: 0,
+//               format: 0,
+//               mode: 'normal',
+//               style: '',
+//               text: 'Desde vecinos formando equipos de rescate improvisados durante inundaciones hasta ciudades enteras unidas para reconstruir después de un colapso económico, la esencia de la humanidad es más evidente en estos actos de solidaridad. Al adentrarnos en estas narrativas, somos testigos del poder transformador del espíritu comunitario, donde la adversidad se convierte en un catalizador para el crecimiento, la unidad y un futuro más brillante y reconstruido.',
+//               version: 1,
+//             },
+//           ],
+//           direction: 'ltr',
+//           format: '',
+//           indent: 0,
+//           textFormat: 0,
+//           version: 1,
+//         },
+//         {
+//           type: 'block',
+//           fields: {
+//             blockName: 'Dynamic components',
+//             blockType: 'banner',
+//             content: {
+//               root: {
+//                 type: 'root',
+//                 children: [
+//                   {
+//                     type: 'paragraph',
+//                     children: [
+//                       {
+//                         type: 'text',
+//                         detail: 0,
+//                         format: 0,
+//                         mode: 'normal',
+//                         style: '',
+//                         text: 'El contenido anterior es completamente dinámico utilizando bloques de construcción personalizados configurados en el CMS. Puede ser cualquier cosa que desees, desde texto enriquecido e imágenes, hasta componentes complejos y altamente diseñados.',
+//                         version: 1,
+//                       },
+//                     ],
+//                     direction: 'ltr',
+//                     format: '',
+//                     indent: 0,
+//                     textFormat: 0,
+//                     version: 1,
+//                   },
+//                 ],
+//                 direction: 'ltr',
+//                 format: '',
+//                 indent: 0,
+//                 version: 1,
+//               },
+//             },
+//             style: 'info',
+//           },
+//           format: '',
+//           version: 2,
+//         },
+//       ],
+//       direction: 'ltr',
+//       format: '',
+//       indent: 0,
+//       version: 1,
+//     },
+//   },
+//   meta: {
+//     description:
+//       'Explora lo no contado e ignorado. Una visión ampliada de los rincones del mundo, donde cada historia merece su foco de atención.',
+//     // @ts-ignore
+//     image: '{{IMAGE_1}}',
+//     title: 'Mirada Global: Más allá de los titulares',
+//   },
+//   relatedPosts: [], // esto se completa con el script de inicialización
+//   title: 'Mirada Global: Más allá de los titulares',
+// }
+
+export const post2_hr: Partial<Post> = {
   slug: 'global-gaze',
   slugLock: false,
   _status: 'published',
@@ -246,7 +473,7 @@ export const post2_es: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'Explora lo no contado e ignorado. Una visión ampliada de los rincones del mundo, donde cada historia merece su foco de atención.',
+              text: 'Istražite neispričane i zanemarene priče. Prošireni pogled na kutke svijeta, gdje svaka priča zaslužuje svoje svjetlo reflektora.',
               version: 1,
             },
           ],
@@ -259,7 +486,7 @@ export const post2_es: Partial<Post> = {
         {
           type: 'block',
           fields: {
-            blockName: 'Disclaimer',
+            blockName: 'Pravno obavještenje',
             blockType: 'banner',
             content: {
               root: {
@@ -274,7 +501,7 @@ export const post2_es: Partial<Post> = {
                         format: 1,
                         mode: 'normal',
                         style: '',
-                        text: 'Aviso legal:',
+                        text: 'Pravno obavještenje:',
                         version: 1,
                       },
                       {
@@ -283,7 +510,7 @@ export const post2_es: Partial<Post> = {
                         format: 0,
                         mode: 'normal',
                         style: '',
-                        text: ' Este contenido es ficticio y solo para fines demostrativos. Para editar esta publicación, ',
+                        text: ' Ovaj sadržaj je fiktivan i služi isključivo u demonstracijske svrhe. Za uređivanje ove objave, ',
                         version: 1,
                       },
                       {
@@ -295,7 +522,7 @@ export const post2_es: Partial<Post> = {
                             format: 0,
                             mode: 'normal',
                             style: '',
-                            text: 'dirígete al panel de administración.',
+                            text: 'pristupite administracijskoj nadzornoj ploči.',
                             version: 1,
                           },
                         ],
@@ -337,7 +564,7 @@ export const post2_es: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'El Poder de la Resiliencia: Historias de Recuperación y Esperanza',
+              text: 'Snaga otpornosti: Priče o oporavku i nadi',
               version: 1,
             },
           ],
@@ -356,7 +583,7 @@ export const post2_es: Partial<Post> = {
               format: 0,
               mode: 'normal',
               style: '',
-              text: 'A lo largo de la historia, las regiones de todo el mundo han enfrentado el devastador impacto de desastres naturales, la turbulencia de la agitación política y las difíciles secuelas de las crisis económicas. En estos momentos de profunda crisis, emerge una fuerza a menudo subestimada: la indomable resiliencia del espíritu humano. Estas no son solo historias de mera supervivencia, sino relatos de comunidades forjando lazos, uniéndose con un propósito común y demostrando una capacidad innata para superar.',
+              text: 'Kroz povijest, regije širom svijeta suočavale su se s razornim utjecajem prirodnih katastrofa, političkih previranja i teških posljedica ekonomskih kriza. U trenucima duboke krize, pojavljuje se često podcijenjena snaga: nesalomljivi duh ljudske otpornosti. Ovo nisu samo priče o pukom preživljavanju, već priče o zajednicama koje se okupljaju, udružuju s zajedničkim ciljem i pokazuju izvanrednu sposobnost prevladavanja izazova.',
               version: 1,
             },
           ],
@@ -365,76 +592,6 @@ export const post2_es: Partial<Post> = {
           indent: 0,
           textFormat: 0,
           version: 1,
-        },
-        {
-          type: 'block',
-          fields: {
-            blockName: '',
-            blockType: 'mediaBlock',
-            media: '{{IMAGE_2}}',
-            position: 'default',
-          },
-          format: '',
-          version: 2,
-        },
-        {
-          type: 'paragraph',
-          children: [
-            {
-              type: 'text',
-              detail: 0,
-              format: 0,
-              mode: 'normal',
-              style: '',
-              text: 'Desde vecinos formando equipos de rescate improvisados durante inundaciones hasta ciudades enteras unidas para reconstruir después de un colapso económico, la esencia de la humanidad es más evidente en estos actos de solidaridad. Al adentrarnos en estas narrativas, somos testigos del poder transformador del espíritu comunitario, donde la adversidad se convierte en un catalizador para el crecimiento, la unidad y un futuro más brillante y reconstruido.',
-              version: 1,
-            },
-          ],
-          direction: 'ltr',
-          format: '',
-          indent: 0,
-          textFormat: 0,
-          version: 1,
-        },
-        {
-          type: 'block',
-          fields: {
-            blockName: 'Dynamic components',
-            blockType: 'banner',
-            content: {
-              root: {
-                type: 'root',
-                children: [
-                  {
-                    type: 'paragraph',
-                    children: [
-                      {
-                        type: 'text',
-                        detail: 0,
-                        format: 0,
-                        mode: 'normal',
-                        style: '',
-                        text: 'El contenido anterior es completamente dinámico utilizando bloques de construcción personalizados configurados en el CMS. Puede ser cualquier cosa que desees, desde texto enriquecido e imágenes, hasta componentes complejos y altamente diseñados.',
-                        version: 1,
-                      },
-                    ],
-                    direction: 'ltr',
-                    format: '',
-                    indent: 0,
-                    textFormat: 0,
-                    version: 1,
-                  },
-                ],
-                direction: 'ltr',
-                format: '',
-                indent: 0,
-                version: 1,
-              },
-            },
-            style: 'info',
-          },
-          format: '',
-          version: 2,
         },
       ],
       direction: 'ltr',
@@ -445,11 +602,11 @@ export const post2_es: Partial<Post> = {
   },
   meta: {
     description:
-      'Explora lo no contado e ignorado. Una visión ampliada de los rincones del mundo, donde cada historia merece su foco de atención.',
+      'Istražite neispričane i zanemarene priče. Prošireni pogled na kutke svijeta, gdje svaka priča zaslužuje svoje svjetlo reflektora.',
     // @ts-ignore
     image: '{{IMAGE_1}}',
-    title: 'Mirada Global: Más allá de los titulares',
+    title: 'Globalni Pogled: Iza Naslova',
   },
-  relatedPosts: [], // esto se completa con el script de inicialización
-  title: 'Mirada Global: Más allá de los titulares',
+  relatedPosts: [], // ovo popunjava skripta za inicijalizaciju podataka
+  title: 'Globalni Pogled: Iza Naslova',
 }
