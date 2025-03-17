@@ -1,3 +1,5 @@
+import { code } from "node_modules/payload/dist/fields/validations"
+
 const localization = {
   defaultLocale: 'en',
   // fallback: true,
@@ -11,22 +13,26 @@ const localization = {
       label: 'English (English)',
     },
     {
+      code: 'hr',
+      label: 'Croatian (Hrvatski)',
+    },
+    {
       code: 'es',
       label: 'Spanish (Español)',
     },
-    {
-      code: 'de',
-      label: 'German (Deutsch)',
-    },
-    {
-      code: 'ja',
-      label: 'Japanese (日本語)',
-    },
-    {
-      code: 'ar',
-      label: 'Arabic (العربية)',
-      rtl: true,
-    },
+    // {
+    //   code: 'de',
+    //   label: 'German (Deutsch)',
+    // },
+    // {
+    //   code: 'ja',
+    //   label: 'Japanese (日本語)',
+    // },
+    // {
+    //   code: 'ar',
+    //   label: 'Arabic (العربية)',
+    //   rtl: true,
+    // },
   ],
 }
 

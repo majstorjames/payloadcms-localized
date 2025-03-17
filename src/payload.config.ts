@@ -14,7 +14,7 @@ import {
   LinkFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
-import sharp from 'sharp' // editor-import
+//import sharp from 'sharp' // editor-import
 import { UnderlineFeature } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
@@ -207,7 +207,7 @@ export default buildConfig({
   ],
   localization,
   secret: process.env.PAYLOAD_SECRET!,
-  sharp,
+  //sharp,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
