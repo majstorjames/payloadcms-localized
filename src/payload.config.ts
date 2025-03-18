@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
 import { nestedDocsPlugin } from '@payloadcms/plugin-nested-docs'
@@ -22,6 +23,11 @@ import { fileURLToPath } from 'url'
 
 import Categories from './collections/Categories'
 import { Media } from './collections/Media'
+//import { MediaWithPrefix } from './collections/MediaWithPrefix'
+
+import { s3Storage } from '@payloadcms/storage-s3'
+
+
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import Users from './collections/Users'
@@ -48,6 +54,15 @@ const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
     ? `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
     : process.env.NEXT_PUBLIC_SERVER_URL!
 }
+
+// const generateFileURL = (args: {
+//   collection: CollectionConfig
+//   filename: string
+//   prefix?: string
+//   size?: ImageSize
+// }) => {
+//   return `${process.env.S3_ENDPOINT}/${process.env.S3_BUCKET}/${args.filename}`
+// }
 
 export default buildConfig({
   admin: {
@@ -122,12 +137,25 @@ export default buildConfig({
       ]
     },
   }),
-  db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+
+
+  // db: mongooseAdapter({
+  //   url: process.env.DATABASE_URI || '',
+  // }),
+
+  db: postgresAdapter({
+    // Postgres-specific arguments go here.
+    // `pool` is required.
+    // using this for supabase
+    pool: {
+      connectionString: process.env.DATABASE_URI,
+    },
   }),
+
+
   collections: [Pages, Posts, Media, Categories, Users],
-  cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
-  csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
+  //cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
+  //csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [
     // The seed endpoint is used to populate the database with some example data
     // You should delete this endpoint before deploying your site to production
@@ -203,7 +231,33 @@ export default buildConfig({
         },
       },
     }),
-    payloadCloudPlugin(), // storage-adapter-placeholder
+    //payloadCloudPlugin(), // storage-adapter-placeholder
+
+    s3Storage({
+      collections: {
+        media: {
+          prefix: 'media',
+          disablePayloadAccessControl: true,
+
+          generateFileURL: (args: any) => {
+            return `${process.env.NEXT_PUBLIC_S3_HOSTNAME}/${args.prefix}/${args.filename}`
+          }
+        },
+      },
+      bucket: process.env.S3_BUCKET as string,
+      config: {
+        credentials: {
+          accessKeyId: process.env.S3_ACCESS_KEY_ID || '',
+          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY || '',
+        },
+        region: process.env.S3_REGION,
+        endpoint: process.env.S3_ENDPOINT,
+        forcePathStyle: true,
+        apiVersion: 'v4', // Ensure correct AWS-compatible signing
+
+        // ... Other S3 configuration
+      },
+    }),
   ],
   localization,
   secret: process.env.PAYLOAD_SECRET!,

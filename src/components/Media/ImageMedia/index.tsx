@@ -30,30 +30,29 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
   let width: number | undefined
   let height: number | undefined
   let alt = altFromProps
-  let src: StaticImageData | string = srcFromProps || ''
+  let src: string | StaticImageData = ''
+  let prefix = 'media'
 
-  if (!src && resource && typeof resource === 'object') {
-    const {
-      alt: altFromResource,
-      filename: fullFilename,
-      height: fullHeight,
-      url,
-      width: fullWidth,
-    } = resource
 
-    width = fullWidth!
-    height = fullHeight!
-    alt = altFromResource
+  if (srcFromProps) {
+    src = srcFromProps
+  } else if (resource && typeof resource === 'object' && resource.filename) {
+    src = `${process.env.NEXT_PUBLIC_S3_HOSTNAME}/${prefix}/${resource.filename}`
 
-    src = `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`
+    width = resource.width ?? undefined
+    height = resource.height ?? undefined
+    alt = resource.alt
   }
 
-  // NOTE: this is used by the browser to determine which image to download at different screen sizes
+  // Ensure the image source is valid before rendering
+  if (!src) return null
+
+  // NOTE: This is used by the browser to determine which image to download at different screen sizes
   const sizes = sizeFromProps
     ? sizeFromProps
     : Object.entries(breakpoints)
-        .map(([, value]) => `(max-width: ${value}px) ${value}px`)
-        .join(', ')
+      .map(([, value]) => `(max-width: ${value}px) ${value}px`)
+      .join(', ')
 
   return (
     <NextImage
