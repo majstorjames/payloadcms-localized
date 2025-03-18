@@ -41,8 +41,8 @@ export const home = (locale: 'en' | 'hr'): RequiredDataFromCollectionSlug<'pages
                 style: '',
                 text:
                   locale === 'en'
-                    ? 'Payload Website Template'
-                    : 'Predložak web stranice Payload',
+                    ? 'Website Template with localization'
+                    : 'Predložak web stranice s lokalizacijom',
                 version: 1,
               },
             ],
@@ -110,7 +110,7 @@ export const home = (locale: 'en' | 'hr'): RequiredDataFromCollectionSlug<'pages
                 fields: {
                   linkType: 'custom',
                   newTab: true,
-                  url: 'https://github.com/payloadcms/payload/tree/beta/templates/website',
+                  url: 'https://github.com/majstorjames/payloadcms-localized.git',
                 },
                 format: '',
                 indent: 0,

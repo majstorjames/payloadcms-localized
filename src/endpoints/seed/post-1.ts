@@ -776,17 +776,34 @@ export const post1_hr: Partial<Post> = {
           tag: 'h4',
           version: 1,
         },
+        {
+          type: 'block',
+          fields: {
+            blockName: 'Generate Text',
+            blockType: 'code',
+            code: "async function generateText(prompt) {\n    const apiKey = 'your-api-key';\n    const apiUrl = 'https://api.example.com/generate-text';\n\n    const response = await fetch(apiUrl, {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'application/json',\n            'Authorization': `Bearer ${apiKey}`\n        },\n        body: JSON.stringify({\n            model: 'text-generation-model',\n            prompt: prompt,\n            max_tokens: 50\n        })\n    });\n\n    const data = await response.json();\n    console.log(data.choices[0].text.trim());\n}\n\n// Example usage\ngenerateText(\"Once upon a time in a faraway land,\");\n",
+            language: 'javascript',
+          },
+          format: '',
+          version: 2,
+        },
       ],
       direction: 'ltr',
       format: '',
       indent: 0,
       version: 1,
     },
+
+    
+
+
+
   },
 
   meta: {
     description:
-      'Uronite u čuda moderne inovacije, gdje je jedina konstanta promjena.',
+      'Uronite u čuda moderne inovacije, gdje je jedina konstanta promjena..',
+    // @ts-ignore
     image: '{{IMAGE_1}}',
     title: 'Digitalni Horizonti: Pogled u Sutrašnjicu',
   },

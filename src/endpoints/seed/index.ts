@@ -516,6 +516,13 @@ export const seed = async ({
         },
         {
           link: {
+            type: 'custom',
+            label: 'Posts',
+            url: '/posts',
+          },
+        },
+        {
+          link: {
             type: 'reference',
             label: 'Contact',
             reference: {
@@ -542,6 +549,14 @@ export const seed = async ({
             label: 'Početna',
           },
         },
+        {
+          link: {
+            type: 'custom',
+            label: 'Obavijesti',
+            url: '/posts',
+          },
+        },
+        
         {
           id: header.navItems![1].id,
           link: {
@@ -577,13 +592,13 @@ export const seed = async ({
             type: 'custom',
             label: 'Source Code',
             newTab: true,
-            url: 'https://github.com/payloadcms/payload/tree/beta/templates/website',
+            url: 'https://github.com/majstorjames/payloadcms-localized',
           },
         },
         {
           link: {
             type: 'custom',
-            label: 'Payload',
+            label: 'Built with ❤️ using Payload',
             newTab: true,
             url: 'https://payloadcms.com/',
           },
@@ -609,7 +624,7 @@ export const seed = async ({
           id: footer.navItems![1].id,
           link: {
             type: 'custom',
-            url: 'https://github.com/payloadcms/payload/tree/beta/templates/website',
+            url: 'https://github.com/majstorjames/payloadcms-localized',
             label: 'Izvorni kod',
           },
         },
@@ -618,7 +633,7 @@ export const seed = async ({
           link: {
             type: 'custom',
             url: 'https://payloadcms.com/',
-            label: 'Payload',
+            label: 'Izrađeno s ❤️ pomoću Payloada',
           },
         },
       ],

@@ -82,7 +82,7 @@ export const homeStatic: Page = {
   },
   meta: {
     description: 'An open-source website built with Payload and Next.js.',
-    title: 'Payload Website Template',
+    title: 'Website Template with localized content ',
   },
   title: 'Home',
 }
