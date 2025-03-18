@@ -550,6 +550,7 @@ export const seed = async ({
           },
         },
         {
+          id: header.navItems![1].id,
           link: {
             type: 'custom',
             label: 'Obavijesti',
@@ -558,7 +559,7 @@ export const seed = async ({
         },
         
         {
-          id: header.navItems![1].id,
+          id: header.navItems![2].id,
           link: {
             type: 'reference',
             reference: {
