@@ -76,7 +76,7 @@ function LocaleSwitcher() {
 
   return (
     <Select onValueChange={onSelectChange} value={locale}>
-      <SelectTrigger className="w-auto text-sm bg-transparent gap-2 pl-0 md:pl-3 border-none">
+      <SelectTrigger className="w-auto text-sm text-gray-800 dark:text-white bg-transparent gap-2 pl-0 md:pl-3 border-none">
         <SelectValue placeholder="Theme" />
       </SelectTrigger>
       <SelectContent>
