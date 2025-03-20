@@ -1,13 +1,17 @@
+
 import React from 'react'
 
 interface HamburgerProps {
     isMenuOpen: boolean
-    onClick: () => void // ✅ Accept onClick prop
+    onClick: () => void
 }
 
 export const Hamburger: React.FC<HamburgerProps> = ({ isMenuOpen, onClick }) => {
     return (
-        <button onClick={onClick} className="flex flex-col justify-center items-center">
+        <button
+            onClick={onClick}
+            className="flex flex-col justify-center items-center z-[999] relative"
+        >
             <span className={`bg-gray-800 dark:bg-white block transition-all duration-300 ease-out 
                         h-0.5 w-6 rounded-sm ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`} >
             </span>

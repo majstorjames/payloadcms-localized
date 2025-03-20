@@ -16,6 +16,7 @@ export async function Footer({ locale }: { locale: TypedLocale }) {
   return (
     <footer className="border-t border-border bg-black dark:bg-card text-white">
       <div className="container py-8 gap-8 flex flex-col md:flex-row md:justify-between">
+
         <Link className="flex items-center" href="/">
           <span className="text-2xl inline font-bold dark:text-white ">WEB<span className="text-2xl font-thin inline dark:text-white ">SITE</span></span>
 
