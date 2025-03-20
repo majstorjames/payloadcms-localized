@@ -15,7 +15,7 @@ import logo from './logo.svg' // Import the logo.svg file
 
 export const Logo = () => {
   return (
-    /* eslint-disable @next/next/no-img-element */
+    // /* eslint-disable @next/next/no-img-element */
     // <img
     //   alt="Payload Logo"
     //   className="max-w-[9.375rem] invert dark:invert-0"
