@@ -10,3 +10,6 @@ export async function Header({ locale }: { locale: TypedLocale }) {
 
   return <HeaderClient header={header} />
 }
+
+
+

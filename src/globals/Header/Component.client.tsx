@@ -7,6 +7,7 @@ import type { Header } from '@/payload-types'
 import { Logo } from '@/components/Logo/Logo'
 import { HeaderNav } from './Nav'
 import { usePathname, useRouter } from '@/i18n/routing'
+import { ModalMenu } from '@/components/ModalMenu'
 
 interface HeaderClientProps {
   header: Header
@@ -17,6 +18,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ header }) => {
   const [theme, setTheme] = useState<string | null>(null)
   const { headerTheme, setHeaderTheme } = useHeaderTheme()
   const pathname = usePathname()
+
 
   useEffect(() => {
     setHeaderTheme(null)
@@ -29,15 +31,21 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ header }) => {
   }, [headerTheme])
 
   return (
-    <header
-      className="container relative z-20 py-8 flex justify-end gap-2"
-      {...(theme ? { 'data-theme': theme } : {})}
-    >
-      <Link href="/" className="me-auto">
-        <Logo />
-      </Link>
-      {/* <LocaleSwitcher /> */}
-      <HeaderNav header={header} />
-    </header>
+    <div>
+      <header
+        className="fixed top-2 left-5 right-5 z-[50] backdrop-blur-md shadow-md border border-white/30 dark:border-white/20 rounded-3xl px-6 py-4 flex justify-between items-center text-white mix-blend-difference bg-black/20
+        supports-backdrop-blur:bg-white/10 dark:supports-backdrop-blur:bg-black/10 text-black dark:text-white"
+
+        {...(theme ? { 'data-theme': theme } : {})}>
+        <Link href="/" className="me-auto">
+          <Logo />
+        </Link>
+        <HeaderNav header={header} />
+
+      </header>
+
+
+    </div>
+
   )
 }

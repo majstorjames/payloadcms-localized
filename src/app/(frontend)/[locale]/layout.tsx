@@ -7,6 +7,7 @@ import React from 'react'
 
 import { Footer } from '@/globals/Footer/Component'
 import { Header } from '@/globals/Header/Component'
+import { ModalMenu } from '@/components/ModalMenu'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
@@ -61,8 +62,11 @@ export default async function RootLayout({ children, params }: Args) {
             <Header locale={locale} />
             {children}
             <Footer locale={locale} />
+
+
           </NextIntlClientProvider>
         </Providers>
+
       </body>
     </html>
   )
@@ -80,3 +84,4 @@ export const metadata: Metadata = {
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }))
 }
+
