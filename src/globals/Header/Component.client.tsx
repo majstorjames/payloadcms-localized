@@ -36,7 +36,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ header }) => {
         // className="fixed top-2 left-5 right-5 z-[50] backdrop-blur-lg shadow-md border border-white/30 dark:border-white/20 rounded-3xl px-6 py-4 flex justify-between items-center text-white mix-blend-difference bg-black/20
         // supports-backdrop-blur:bg-white/50 dark:supports-backdrop-blur:bg-black/50 text-black dark:text-white"
 
-        className="fixed top-2 left-5 right-5 z-[50] backdrop-blur-lg shadow-md rounded-3xl px-6 py-4 flex justify-between items-center text-foreground bg-background/50 supports-backdrop-blur:bg-background/50"
+        className="fixed top-2 left-2 right-2 z-[50] backdrop-blur-lg shadow-md rounded-3xl pl-3 pr-5 py-4 flex justify-between items-center text-foreground bg-background/50 supports-backdrop-blur:bg-background/50"
 
 
 
