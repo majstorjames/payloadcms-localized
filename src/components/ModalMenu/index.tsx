@@ -98,8 +98,9 @@ export const ModalMenu: React.FC<ModalMenuProps> = ({ header, isOpen, onClose })
 
   return ReactDOM.createPortal(
     <div
-      className={`fixed z-[100] inset-0 bg-white/30 dark:bg-black/60 backdrop-blur-md flex transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
+      className={`fixed z-[100] inset-0 bg-background/80 dark:bg-background/80 backdrop-blur-lg flex transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+
+
     >
       {/* Modal layout: 2-column on md+, 1-column mobile */}
       <div className="grid grid-cols-1 md:grid-cols-2 w-full h-full relative">
