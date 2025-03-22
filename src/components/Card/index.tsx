@@ -3,14 +3,14 @@ import { cn } from '@/utilities/ui'
 import useClickableCard from '@/utilities/useClickableCard'
 import Link from 'next/link'
 import React, { Fragment } from 'react'
-import type { Post } from '@/payload-types'
+import type { Post, Recipe } from '@/payload-types'
 import { Media } from '@/components/Media'
 
 export const Card: React.FC<{
   alignItems?: 'center'
   className?: string
-  doc?: Post
-  relationTo?: 'posts'
+  doc?: Post | Recipe
+  relationTo?: 'posts' | 'recipes'
   showCategories?: boolean
   title?: string
 }> = (props) => {

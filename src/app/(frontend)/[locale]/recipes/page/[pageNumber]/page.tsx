@@ -29,8 +29,8 @@ export default async function Page({ params: paramsPromise }: Args) {
 
   if (!Number.isInteger(sanitizedPageNumber)) notFound()
 
-  const posts = await payload.find({
-    collection: 'posts',
+  const recipes = await payload.find({
+    collection: 'recipes',
     depth: 1,
     limit: 12,
     locale,
@@ -43,23 +43,24 @@ export default async function Page({ params: paramsPromise }: Args) {
       <PageClient />
       <div className="container mb-16">
         <div className="prose dark:prose-invert max-w-none">
-          <h1>{t('posts')}</h1>
+          <h1>{t('recipes')}</h1>
         </div>
       </div>
 
       <div className="container mb-8">
         <PageRange
-          collection="posts"
-          currentPage={posts.page}
+          collection="recipes"
+          currentPage={recipes.page}
           limit={12}
-          totalDocs={posts.totalDocs}
+          totalDocs={recipes.totalDocs}
         />
       </div>
 
-      <CollectionArchive docs={posts.docs} relationTo="posts" />
+      <CollectionArchive docs={recipes.docs} relationTo='recipes' />
+
       <div className="container">
-        {posts.totalPages > 1 && posts.page && (
-          <Pagination page={posts.page} totalPages={posts.totalPages} />
+        {recipes.totalPages > 1 && recipes.page && (
+          <Pagination page={recipes.page} totalPages={recipes.totalPages} />
         )}
       </div>
     </div>
@@ -69,14 +70,14 @@ export default async function Page({ params: paramsPromise }: Args) {
 export async function generateMetadata({ params: paramsPromise }: Args): Promise<Metadata> {
   const { pageNumber } = await paramsPromise
   return {
-    title: `Payload Website Template Posts Page ${pageNumber || ''}`,
+    title: `Payload Website Template recipes Page ${pageNumber || ''}`,
   }
 }
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
-  const posts = await payload.find({
-    collection: 'posts',
+  const recipes = await payload.find({
+    collection: 'recipes',
     depth: 0,
     limit: 10,
     draft: false,
@@ -85,7 +86,7 @@ export async function generateStaticParams() {
 
   const pages: { pageNumber: string }[] = []
 
-  for (let i = 1; i <= posts.totalPages; i++) {
+  for (let i = 1; i <= recipes.totalPages; i++) {
     pages.push({ pageNumber: String(i) })
   }
 

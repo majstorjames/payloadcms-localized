@@ -23,8 +23,8 @@ export default async function Page({ params }: Args) {
   const t = await getTranslations()
   const payload = await getPayload({ config: configPromise })
 
-  const posts = await payload.find({
-    collection: 'posts',
+  const recipes = await payload.find({
+    collection: 'recipes',
     locale,
     depth: 1,
     limit: 12,
@@ -36,26 +36,27 @@ export default async function Page({ params }: Args) {
       <PageClient />
       <div className="container mb-16">
         <div className="prose dark:prose-invert max-w-none">
-          <h1>{t('posts')}</h1>
+          <h1>{t('recipes')}</h1>
         </div>
       </div>
 
       <div className="container mb-8">
         <PageRange
-          collection="posts"
-          currentPage={posts.page}
+          collection="recipes"
+          currentPage={recipes.page}
           limit={12}
-          totalDocs={posts.totalDocs}
+          totalDocs={recipes.totalDocs}
         />
       </div>
 
-      {/* <CollectionArchive posts={posts.docs} /> */}
-      <CollectionArchive docs={posts.docs} relationTo='posts' />
+      {/* <CollectionArchive recipes={recipes.docs} /> */}
+      <CollectionArchive docs={recipes.docs} relationTo='recipes' />
+
 
 
       <div className="container">
-        {posts.totalPages > 1 && posts.page && (
-          <Pagination page={posts.page} totalPages={posts.totalPages} />
+        {recipes.totalPages > 1 && recipes.page && (
+          <Pagination page={recipes.page} totalPages={recipes.totalPages} />
         )}
       </div>
     </div>
