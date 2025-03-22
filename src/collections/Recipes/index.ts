@@ -35,30 +35,52 @@ export const Recipes: CollectionConfig = {
     read: authenticatedOrPublished,
     update: authenticated,
   },
+  // admin: {
+  //   defaultColumns: ['title', 'slug', 'updatedAt'],
+  //   livePreview: {
+  //     url: ({ data, locale }) => {
+  //       const path = generatePreviewPath({
+  //         slug: typeof data?.slug === 'string' ? data.slug : '',
+  //         collection: 'recipes',
+  //         locale: locale.code,
+  //       })
+
+  //       return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+  //     },
+  //   },
+  //   preview: (data, { locale }) => {
+  //     const path = generatePreviewPath({
+  //       slug: typeof data?.slug === 'string' ? data.slug : '',
+  //       collection: 'recipes',
+  //       locale,
+  //     })
+
+  //     return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+  //   },
+  //   useAsTitle: 'title',
+  // },
   admin: {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     livePreview: {
       url: ({ data, locale }) => {
-        const path = generatePreviewPath({
-          slug: typeof data?.slug === 'string' ? data.slug : '',
-          collection: 'recipes',
-          locale: locale.code,
-        })
-
-        return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+        const slug = typeof data?.slug === 'string' ? data.slug : ''
+        const collection = 'recipes'
+        const localeCode = locale || 'en'
+  
+        const path = `/${localeCode}/recipes/${slug}`
+        const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+  
+        return `${baseUrl}/next/preview?slug=${slug}&collection=${collection}&path=${encodeURIComponent(path)}`
       },
     },
-    preview: (data, { locale }) => {
-      const path = generatePreviewPath({
-        slug: typeof data?.slug === 'string' ? data.slug : '',
-        collection: 'recipes',
-        locale,
-      })
-
-      return `${process.env.NEXT_PUBLIC_SERVER_URL}${path}`
+    preview: ({ slug }, { locale }) => {
+      const localeCode = locale || 'en'
+      return `${process.env.NEXT_PUBLIC_SERVER_URL}/${localeCode}/recipes/${slug}`
     },
     useAsTitle: 'title',
   },
+  
+  
   fields: [
     {
       name: 'title',

@@ -5,6 +5,7 @@ import type { Post } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 import { useTranslations } from 'next-intl'
+import { LocaleSwitcher } from '@/components/LocaleSwitcher'
 
 export const PostHero: React.FC<{
   post: Post
@@ -14,9 +15,11 @@ export const PostHero: React.FC<{
 
   return (
     <div className="relative -mt-[10.4rem] flex items-end">
+
       <div className="container z-10 relative lg:grid lg:grid-cols-[1fr_48rem_1fr] text-white pb-8">
         <div className="col-start-1 col-span-1 md:col-start-2 md:col-span-2">
           <div className="uppercase text-sm mb-6">
+
             {categories?.map((category, index) => {
               if (typeof category === 'object' && category !== null) {
                 const { title: categoryTitle } = category
@@ -34,6 +37,7 @@ export const PostHero: React.FC<{
               }
               return null
             })}
+
           </div>
 
           <div className="">
@@ -66,8 +70,11 @@ export const PostHero: React.FC<{
                       </React.Fragment>
                     )
                   })}
+                  <LocaleSwitcher className="text-sm text-white" />
+
                 </div>
               )}
+
             </div>
             {publishedAt && (
               <div className="flex flex-col gap-1">
@@ -76,6 +83,8 @@ export const PostHero: React.FC<{
                 <time dateTime={publishedAt}>{formatDateTime(publishedAt)}</time>
               </div>
             )}
+
+
           </div>
         </div>
       </div>
@@ -85,6 +94,7 @@ export const PostHero: React.FC<{
         )}
         <div className="absolute pointer-events-none left-0 bottom-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent" />
       </div>
+
     </div>
   )
 }

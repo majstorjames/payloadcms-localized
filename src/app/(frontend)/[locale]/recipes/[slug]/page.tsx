@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-import { RelatedPosts } from '@/blocks/RelatedPosts/Component'
+import { RelatedRecipes } from '@/blocks/RelatedRecipes/Component'
 import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
@@ -8,12 +8,13 @@ import { draftMode } from 'next/headers'
 import React, { cache } from 'react'
 import RichText from '@/components/RichText'
 
-import type { Post } from '@/payload-types'
+import type { Recipe } from '@/payload-types'
 
 import { PostHero } from '@/heros/PostHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { TypedLocale } from 'payload'
+import { LocaleSwitcher } from '@/components/LocaleSwitcher'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -38,7 +39,7 @@ type Args = {
   }>
 }
 
-export default async function Post({ params: paramsPromise }: Args) {
+export default async function Recipe({ params: paramsPromise }: Args) {
   const { slug = '', locale = 'en' } = await paramsPromise
   const url = '/recipes/' + slug
   const post = await queryPost({ slug, locale })
@@ -51,20 +52,25 @@ export default async function Post({ params: paramsPromise }: Args) {
 
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
-
       <PostHero post={post} />
 
       <div className="flex flex-col items-center gap-4 pt-8">
+
+
         <div className="container lg:mx-0 lg:grid lg:grid-cols-[1fr_48rem_1fr] grid-rows-[1fr]">
+          <div>
+
+          </div>
           <RichText
             className="lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[1fr]"
             content={post.content}
             enableGutter={false}
           />
+
         </div>
 
         {post.relatedRecipes && post.relatedRecipes.length > 0 && (
-          <RelatedPosts
+          <RelatedRecipes
             className="mt-12"
             docs={post.relatedRecipes.filter((post) => typeof post === 'object')}
           />

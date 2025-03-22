@@ -224,7 +224,7 @@ export default buildConfig({
       },
     }),
     searchPlugin({
-      collections: ['posts',  'recipes'],
+      collections: ['posts', 'recipes'],
       beforeSync: beforeSyncWithSearch,
       searchOverrides: {
         fields: ({ defaultFields }) => {
