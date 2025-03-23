@@ -14,5 +14,74 @@
   "dashboard": "Dashboard",
   "previous": "Previous",
   "next": "Next",
-  "more-pages": "More pages"
+  "more-pages": "More pages",
+  "units": {
+    "ml": "Milliliter (ml)",
+    "l": "Liter (l)",
+    "g": "Gram (g)",
+    "kg": "Kilogram (kg)",
+    "tsp": "Teaspoon (tsp)",
+    "tbsp": "Tablespoon (tbsp)",
+    "oz": "Ounce (oz)",
+    "lb": "Pound (lb)",
+    "cups": "Cup(s)",
+    "pieces": "Piece(s)",
+    "cloves": "Clove(s)",
+    "whole": "Whole"
+  },
+  "labels": {
+    "title": "Title",
+    "featuredImage": "Featured Image",
+    "description": "Short Description",
+    "ingredientName": "Ingredient Name",
+    "quantity": "Quantity",
+    "unitSystem": "Unit System",
+    "unitSystems": {
+      "metric": "Metric",
+      "imperial": "Imperial",
+      "general": "General (e.g. pieces)"
+    },
+    "metricUnit": "Metric Unit",
+    "imperialUnit": "Imperial Unit",
+    "generalUnit": "General Unit",
+    "unit": "Normalized Unit",
+    "steps": "Steps",
+    "instruction": "Instruction",
+    "image": "Image",
+    "content": "Content",
+    "howToServe": "How to Serve",
+    "cookingTime": "Cooking Time (in minutes)",
+    "minutes": "Minutes",
+    "servings": "Number of Servings",
+    "difficulty": "Difficulty",
+    "difficulties": {
+      "Easy": "Easy",
+      "Medium": "Medium",
+      "Hard": "Hard"
+    },
+    "relatedRecipes": "Related Recipes",
+    "categories": "Categories",
+    "authors": "Authors",
+    "populatedAuthors": "Populated Authors"
+  },
+  "tabs": {
+    "content": "Content",
+    "meta": "Meta",
+    "seo": "SEO"
+  },
+  "arrayLabels": {
+    "ingredient": {
+      "singular": "Ingredient",
+      "plural": "Ingredients"
+    },
+    "step": {
+      "singular": "Step",
+      "plural": "Steps"
+    },
+    "portion": {
+      "singular": "Portion",
+      "plural": "Portions",
+      ">4": "Portions"
+    }
+  }
 }

@@ -17,5 +17,74 @@
     "more-pages": "Više stranica",
     "auto": "Automatski",
     "light": "Svijetlo",
-    "dark": "Tamno"
+    "dark": "Tamno",
+    "units": {
+        "ml": "Mililitar (ml)",
+        "l": "Litar (l)",
+        "g": "Gram (g)",
+        "kg": "Kilogram (kg)",
+        "tsp": "Čajna žličica (tsp)",
+        "tbsp": "Jušna žlica (tbsp)",
+        "oz": "Unca (oz)",
+        "lb": "Funta (lb)",
+        "cups": "Šalica(e)",
+        "pieces": "Komad(i)",
+        "cloves": "Češanj(i)",
+        "whole": "Cijeli"
+    },
+    "labels": {
+        "title": "Naslov",
+        "featuredImage": "Naslovna slika",
+        "description": "Kratki opis",
+        "ingredientName": "Naziv sastojka",
+        "quantity": "Količina",
+        "unitSystem": "Sustav mjerenja",
+        "unitSystems": {
+            "metric": "Metrički",
+            "imperial": "Imperijalni",
+            "general": "Općenito (npr. komadi)"
+        },
+        "metricUnit": "Metrička jedinica",
+        "imperialUnit": "Imperijalna jedinica",
+        "generalUnit": "Opća jedinica",
+        "unit": "Normalizirana jedinica",
+        "steps": "Koraci",
+        "instruction": "Uputa",
+        "howToServe": "Kako poslužiti",
+        "image": "Slika",
+        "content": "Sadržaj",
+        "cookingTime": "Vrijeme kuhanja (u minutama)",
+        "minutes": "Minuta",
+        "servings": "Broj porcija",
+        "difficulty": "Težina",
+        "difficulties": {
+            "Easy": "Lako",
+            "Medium": "Srednje",
+            "Hard": "Teško"
+        },
+        "relatedRecipes": "Povezani recepti",
+        "categories": "Kategorije",
+        "authors": "Autori",
+        "populatedAuthors": "Popunjeni autori"
+    },
+    "tabs": {
+        "content": "Sadržaj",
+        "meta": "Meta",
+        "seo": "SEO"
+    },
+    "arrayLabels": {
+        "ingredient": {
+            "singular": "Sastojak",
+            "plural": "Sastojci"
+        },
+        "step": {
+            "singular": "Korak",
+            "plural": "Koraci"
+        },
+        "portion": {
+            "singular": "Porcija",
+            "plural": "Porcije",
+            ">4": "Porcija"
+        }
+    }
 }

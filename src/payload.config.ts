@@ -39,9 +39,15 @@ import { revalidateRedirects } from './hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
 import type { Page, Post, Recipe } from 'src/payload-types'
 
+
+
 import { searchFields } from '@/search/fieldOverrides'
 import { beforeSyncWithSearch } from '@/search/beforeSync'
 import localization from './i18n/localization'
+import { en } from '@payloadcms/translations/languages/en'
+import { hr } from '@payloadcms/translations/languages/hr'
+
+
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -261,6 +267,13 @@ export default buildConfig({
     }),
   ],
   localization,
+  i18n: {
+    supportedLanguages: { en, hr },
+    fallbackLanguage: 'hr',
+
+    // ...
+  },
+
   secret: process.env.PAYLOAD_SECRET!,
   //sharp,
   typescript: {

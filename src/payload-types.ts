@@ -652,7 +652,8 @@ export interface Form {
 export interface Recipe {
   id: number;
   title: string;
-  content: {
+  featuredImage?: (number | null) | Media;
+  description?: {
     root: {
       type: string;
       children: {
@@ -666,7 +667,42 @@ export interface Recipe {
       version: number;
     };
     [k: string]: unknown;
-  };
+  } | null;
+  ingredients: {
+    name: string;
+    quantity?: number | null;
+    unitSystem?: ('metric' | 'imperial' | 'general') | null;
+    metricUnit?: ('ml' | 'l' | 'g' | 'kg') | null;
+    imperialUnit?: ('tsp' | 'tbsp' | 'oz' | 'lb' | 'cups') | null;
+    generalUnit?: ('pieces' | 'cloves' | 'whole') | null;
+    unit?: string | null;
+    id?: string | null;
+  }[];
+  steps?:
+    | {
+        instruction: string;
+        image?: (number | null) | Media;
+        id?: string | null;
+      }[]
+    | null;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  cookingTime?: number | null;
+  servings: number;
+  difficulty?: ('Easy' | 'Medium' | 'Hard') | null;
   relatedRecipes?: (number | Recipe)[] | null;
   categories?: (number | Category)[] | null;
   meta?: {
@@ -1088,7 +1124,31 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface RecipesSelect<T extends boolean = true> {
   title?: T;
+  featuredImage?: T;
+  description?: T;
+  ingredients?:
+    | T
+    | {
+        name?: T;
+        quantity?: T;
+        unitSystem?: T;
+        metricUnit?: T;
+        imperialUnit?: T;
+        generalUnit?: T;
+        unit?: T;
+        id?: T;
+      };
+  steps?:
+    | T
+    | {
+        instruction?: T;
+        image?: T;
+        id?: T;
+      };
   content?: T;
+  cookingTime?: T;
+  servings?: T;
+  difficulty?: T;
   relatedRecipes?: T;
   categories?: T;
   meta?:

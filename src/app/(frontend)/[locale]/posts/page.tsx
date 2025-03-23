@@ -19,7 +19,7 @@ type Args = {
 }
 
 export default async function Page({ params }: Args) {
-  const { locale = 'en' } = await params
+  const { locale = 'hr' } = await params
   const t = await getTranslations()
   const payload = await getPayload({ config: configPromise })
 

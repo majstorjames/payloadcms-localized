@@ -1,19 +1,19 @@
 import { formatDateTime } from 'src/utilities/formatDateTime'
 import React from 'react'
 
-import type { Post } from '@/payload-types'
+import type { Recipe } from '@/payload-types'
 
 import { Media } from '@/components/Media'
 import { useTranslations, useLocale } from 'next-intl'
 import { LocaleSwitcher } from '@/components/LocaleSwitcher'
 
-export const PostHero: React.FC<{
-  post: Post
+
+export const RecipeHero: React.FC<{
+  post: Recipe
 }> = ({ post }) => {
   const { categories, meta: { image: metaImage } = {}, populatedAuthors, publishedAt, title } = post
   const t = useTranslations()
   const locale = useLocale()
-
 
   return (
     <div className="relative -mt-[10.4rem] flex items-end">
@@ -78,6 +78,8 @@ export const PostHero: React.FC<{
               )}
 
             </div>
+
+
             {publishedAt && (
               <div className="flex flex-col gap-1">
                 <p className="text-sm">{t('date-published')}</p>

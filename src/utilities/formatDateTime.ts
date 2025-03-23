@@ -1,20 +1,29 @@
-export const formatDateTime = (timestamp: string): string => {
-  const now = new Date()
-  let date = now
-  if (timestamp) date = new Date(timestamp)
-  const months = date.getMonth()
-  const days = date.getDate()
-  // const hours = date.getHours();
-  // const minutes = date.getMinutes();
-  // const seconds = date.getSeconds();
 
-  const MM = months + 1 < 10 ? `0${months + 1}` : months + 1
-  const DD = days < 10 ? `0${days}` : days
-  const YYYY = date.getFullYear()
-  // const AMPM = hours < 12 ? 'AM' : 'PM';
-  // const HH = hours > 12 ? hours - 12 : hours;
-  // const MinMin = (minutes < 10) ? `0${minutes}` : minutes;
-  // const SS = (seconds < 10) ? `0${seconds}` : seconds;
 
-  return `${MM}/${DD}/${YYYY}`
-}
+// export const formatDateTime = (timestamp: string, locale: string = 'en'): string => {
+//   const now = new Date();
+//   let date = now;
+//   if (timestamp) date = new Date(timestamp);
+
+//   const day = date.getDate();
+//   const month = date.getMonth() + 1;
+//   const year = date.getFullYear();
+
+//   const DD = day < 10 ? `0${day}` : `${day}`;
+//   const MM = month < 10 ? `0${month}` : `${month}`;
+//   const YYYY = `${year}`;
+
+//   return locale === 'hr' ? `${DD}/${MM}/${YYYY}` : `${MM}/${DD}/${YYYY}`;
+// };
+
+
+export const formatDateTime = (timestamp: string, locale: string = 'en'): string => {
+  const now = new Date();
+  const date = timestamp ? new Date(timestamp) : now;
+
+  return new Intl.DateTimeFormat(locale, {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+};
