@@ -27,9 +27,8 @@ git clone https://github.com/majstorjames/payloadcms-localized.git
 
 Copy `.env.example` and paste into new `.env` file with properly defined variables.
 
-
 ## To Do
 
-- Implement access control for authors
+- Implement access control for authors to only create - edit - publish for posts and recipes
 - Implement Resend for emailing
 - Implement Logo upload, Site Title, Theme color selector in global admin
