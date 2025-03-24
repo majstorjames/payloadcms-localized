@@ -1,0 +1,265 @@
+[
+    {
+        "slug": "paprike-u-kajmaku",
+        "_status": "published",
+        "title": {
+            "en": "Peppers in Kajmak",
+            "hr": "Paprike u Kajmaku"
+        },
+        "ingredients": [
+            {
+                "name": {
+                    "en": "Pepper",
+                    "hr": "Paprika"
+                },
+                "quantity": 6,
+                "unitSystem": "general",
+                "generalUnit": "pieces"
+            },
+            {
+                "name": {
+                    "en": "Kajmak",
+                    "hr": "Kajmak"
+                },
+                "quantity": 250,
+                "unitSystem": "metric",
+                "metricUnit": "g"
+            },
+            {
+                "name": {
+                    "en": "Olive Oil",
+                    "hr": "Maslinovo ulje"
+                },
+                "quantity": 2,
+                "unitSystem": "imperial",
+                "imperialUnit": "tbsp"
+            },
+            {
+                "name": {
+                    "en": "Garlic",
+                    "hr": "Češnjak"
+                },
+                "quantity": 3,
+                "unitSystem": "general",
+                "generalUnit": "cloves"
+            },
+            {
+                "name": {
+                    "en": "Salt",
+                    "hr": "Sol"
+                },
+                "quantity": 1,
+                "unitSystem": "general",
+                "generalUnit": "teaspoon"
+            },
+            {
+                "name": {
+                    "en": "Pepper",
+                    "hr": "Papar"
+                },
+                "quantity": 1,
+                "unitSystem": "general",
+                "generalUnit": "teaspoon"
+            },
+            {
+                "name": {
+                    "en": "Parsley",
+                    "hr": "Peršun"
+                },
+                "quantity": 1,
+                "unitSystem": "general",
+                "generalUnit": "tbsp"
+            }
+        ],
+        "steps": [
+            {
+                "instruction": {
+                    "en": "Wash the peppers, cut them in half, and remove the seeds and stems.",
+                    "hr": "Operite paprike, prerežite ih na pola i uklonite sjemenke i stabljike."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Grill the peppers on medium-high heat until slightly charred on both sides.",
+                    "hr": "Grillajte paprike na srednje jakoj vatri dok ne dobiju lagani trag izgaranja s obje strane."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "In a bowl, mix the kajmak, garlic (minced), salt, pepper, and parsley.",
+                    "hr": "U zdjeli pomiješajte kajmak, sitno nasjeckani češnjak, sol, papar i peršun."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Stuff the grilled peppers with the kajmak mixture.",
+                    "hr": "Napravite punjenje od kajmaka i napunite grilane paprike."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Place the stuffed peppers in a baking dish and drizzle with olive oil.",
+                    "hr": "Stavite napunjene paprike u posudu za pečenje i prelijte maslinovim uljem."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Bake the stuffed peppers at 180°C (350°F) for 15-20 minutes until golden brown.",
+                    "hr": "Pecite punjene paprike na 180°C (350°F) 15-20 minuta dok ne postanu zlatno smeđe."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Serve warm and enjoy!",
+                    "hr": "Poslužite toplo i uživajte!"
+                }
+            }
+        ],
+        "meta": {
+            "title": {
+                "en": "Peppers in Kajmak",
+                "hr": "Paprike u Kajmaku"
+            },
+            "description": {
+                "en": "A delicious Serbian dish made with grilled peppers stuffed with kajmak, garlic, and spices.",
+                "hr": "Ukusno srpsko jelo od grilanih paprika punjenih kajmakom, češnjakom i začinima."
+            },
+            "image": "https://example.com/featured-image.jpg"
+        },
+        "relatedPosts": [],
+        "title": {
+            "en": "Peppers in Kajmak",
+            "hr": "Paprike u Kajmaku"
+        }
+    },
+    {
+        "slug": "brzi-kruh",
+        "_status": "published",
+        "title": {
+            "en": "Quick Bread",
+            "hr": "Brzi Kruh"
+        },
+        "ingredients": [
+            {
+                "name": {
+                    "en": "Flour",
+                    "hr": "Brašno"
+                },
+                "quantity": 500,
+                "unitSystem": "metric",
+                "metricUnit": "g"
+            },
+            {
+                "name": {
+                    "en": "Yeast",
+                    "hr": "Kvasac"
+                },
+                "quantity": 1,
+                "unitSystem": "general",
+                "generalUnit": "packet"
+            },
+            {
+                "name": {
+                    "en": "Salt",
+                    "hr": "Sol"
+                },
+                "quantity": 1,
+                "unitSystem": "general",
+                "generalUnit": "teaspoon"
+            },
+            {
+                "name": {
+                    "en": "Sugar",
+                    "hr": "Šećer"
+                },
+                "quantity": 1,
+                "unitSystem": "general",
+                "generalUnit": "teaspoon"
+            },
+            {
+                "name": {
+                    "en": "Water",
+                    "hr": "Voda"
+                },
+                "quantity": 300,
+                "unitSystem": "metric",
+                "metricUnit": "ml"
+            },
+            {
+                "name": {
+                    "en": "Olive Oil",
+                    "hr": "Maslinovo ulje"
+                },
+                "quantity": 2,
+                "unitSystem": "imperial",
+                "imperialUnit": "tbsp"
+            }
+        ],
+        "steps": [
+            {
+                "instruction": {
+                    "en": "In a large bowl, combine flour, yeast, salt, and sugar.",
+                    "hr": "U velikoj zdjeli pomiješajte brašno, kvasac, sol i šećer."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Add water and olive oil to the mixture and stir until a dough forms.",
+                    "hr": "Dodajte vodu i maslinovo ulje u smjesu i miješajte dok se ne stvori tijesto."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Knead the dough on a floured surface for about 5 minutes.",
+                    "hr": "Mijesite tijesto na pobrašnjenoj površini oko 5 minuta."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Place the dough in a bowl, cover with a cloth, and let it rise for 1 hour.",
+                    "hr": "Stavite tijesto u zdjelu, pokrijte krpom i ostavite da odstoji 1 sat."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Preheat the oven to 200°C (392°F).",
+                    "hr": "Zagrijte pećnicu na 200°C."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Shape the dough into a loaf and place it on a baking sheet.",
+                    "hr": "Oblikujte tijesto u veknu i stavite na lim za pečenje."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Bake for 30 minutes or until the bread is golden brown.",
+                    "hr": "Pecite 30 minuta ili dok kruh ne postane zlatno smeđi."
+                }
+            },
+            {
+                "instruction": {
+                    "en": "Allow the bread to cool before slicing and serving.",
+                    "hr": "Ostavite kruh da se ohladi prije nego što ga narežete i poslužite."
+                }
+            }
+        ],
+        "meta": {
+            "title": {
+                "en": "Quick Bread",
+                "hr": "Brzi Kruh"
+            },
+            "description": {
+                "en": "A quick and easy recipe for homemade bread, perfect for any meal.",
+                "hr": "Brzi i jednostavni recept za domaći kruh, savršen za svaki obrok."
+            },
+            "image": "https://majkazmajka.com/wp-content/uploads/2020/05/brzi-kruh.jpg"
+        },
+        "relatedPosts": [],
+        "title": {
+            "en": "Quick Bread",
+            "hr": "Brzi Kruh"
+        }
+    }
+]

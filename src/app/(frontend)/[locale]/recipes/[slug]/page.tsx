@@ -154,7 +154,7 @@ export default async function Recipe({ params: paramsPromise }: Args) {
 
 
 
-        `      <h2 className="text-2xl font-bold !mb-[-64]">🍴 {t('labels.howToServe')}</h2>`
+        <h2 className="text-2xl font-bold !mb-[-32]">🍴 {t('labels.howToServe')}</h2>
         <div className="flex flex-col items-start text-left text-md rounded-[10px] shadow p-4"
           style={{ backgroundColor: 'hsl(var(--card))' }}>
           {/* RichText Content */}

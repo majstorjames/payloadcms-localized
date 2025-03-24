@@ -15,6 +15,9 @@
   "previous": "Previous",
   "next": "Next",
   "more-pages": "More pages",
+  "auto": "Auto",
+  "light": "Light",
+  "dark": "Dark",
   "units": {
     "ml": "Milliliter (ml)",
     "l": "Liter (l)",

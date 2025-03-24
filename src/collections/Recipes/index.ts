@@ -27,7 +27,7 @@ import {
 import { slugField } from '@/fields/slug'
 import { getAdminLabels } from '@/i18n/getAdminLabels'
 
-const labels = getAdminLabels('hr')
+const translations = getAdminLabels()
 
 export const Recipes: CollectionConfig = {
   slug: 'recipes',
@@ -61,30 +61,37 @@ export const Recipes: CollectionConfig = {
       type: 'text',
       localized: true,
       required: true,
-      label: labels.labels.title,
+      label: {
+        en: translations.en.labels.title,
+        hr: translations.hr.labels.title,
+      },
     },
     {
       name: 'featuredImage',
       type: 'upload',
       relationTo: 'media',
-      label: labels.labels.featuredImage,
-    },
+      label: {
+        en: translations.en.labels.featuredImage,
+        hr: translations.hr.labels.featuredImage,
+    }
+  },
     {
+    
       type: 'tabs',
       tabs: [
         {
-          label: labels.tabs.content,
+          label: {
+            en: translations.en.tabs.content,
+            hr: translations.hr.tabs.content,
+          },
           fields: [
-            // {
-            //   name: 'description',
-            //   label: labels.labels.description,
-            //   type: 'textarea',
-            //   localized: true,
-            // },
-
+     
             {
               name: 'description',
-              label: labels.labels.description,
+              label: {
+                en: translations.en.labels.description,
+                hr: translations.hr.labels.description,
+              },
               type: 'richText',
               localized: true,
               editor: lexicalEditor({
@@ -103,75 +110,129 @@ export const Recipes: CollectionConfig = {
               name: 'ingredients',
               type: 'array',
               required: true,
-              labels: labels.arrayLabels.ingredient,
+              label: {
+                en: translations.en.arrayLabels.ingredient.plural,
+                hr: translations.hr.arrayLabels.ingredient.plural
+              },
               fields: [
                 {
                   name: 'name',
-                  label: labels.labels.ingredientName,
+                  label: {
+                    en: translations.en.labels.ingredientName,
+                    hr: translations.hr.labels.ingredientName,
+                  },
                   type: 'text',
                   required: true,
                   localized: true,
                 },
                 {
                   name: 'quantity',
-                  label: labels.labels.quantity,
+                  label: {
+                    en: translations.en.labels.quantity,
+                    hr: translations.hr.labels.quantity,
+                  },
                   type: 'number',
                   required: false,
                 },
                 {
                   name: 'unitSystem',
-                  label: labels.labels.unitSystem,
+                  label: {
+                    en: translations.en.labels.unitSystem,
+                    hr: translations.hr.labels.unitSystem,
+                  },
                   type: 'radio',
                   required: false,
                   options: [
-                    { label: labels.labels.unitSystems.metric, value: 'metric' },
-                    { label: labels.labels.unitSystems.imperial, value: 'imperial' },
-                    { label: labels.labels.unitSystems.general, value: 'general' },
+                    { 
+                      label: {
+                        en: translations.en.labels.unitSystems.metric,
+                        hr: translations.hr.labels.unitSystems.metric,
+                      }, value: 'metric' },
+                    // { label: labels.labels.unitSystems.imperial, value: 'imperial' },
+                    // { label: labels.labels.unitSystems.general, value: 'general' },
+                    { 
+                      label: {
+                        en: translations.en.labels.unitSystems.imperial,
+                        hr: translations.hr.labels.unitSystems.imperial,
+                      }, value: 'imperial' },
+                    { 
+                      label: {
+                        en: translations.en.labels.unitSystems.general,
+                        hr: translations.hr.labels.unitSystems.general,
+                      }, value: 'general' },
                   ],
                   defaultValue: 'metric',
                 },
                 {
                   name: 'metricUnit',
-                  label: labels.labels.metricUnit,
+                  //label: labels.labels.metricUnit,
+                  label:{
+                    en: translations.en.labels.metricUnit,
+                    hr: translations.hr.labels.metricUnit,
+                  },
                   type: 'select',
                   required: false,
                   admin: {
                     condition: (_, siblingData) => siblingData?.unitSystem === 'metric',
                   },
                   options: ['ml', 'l', 'g', 'kg'].map((value) => ({
-                    label: labels.units[value],
+                    //label: labels.units[value],
+                  label: {
+                    en: translations.en.units[value],
+                    hr: translations.hr.units[value],
+                  },
                     value,
                   })),
                 },
                 {
                   name: 'imperialUnit',
-                  label: labels.labels.imperialUnit,
+                  //label: labels.labels.imperialUnit,
+                  label:{
+                    en: translations.en.labels.imperialUnit,
+                    hr: translations.hr.labels.imperialUnit,
+                  },
                   type: 'select',
                   required: false,
                   admin: {
                     condition: (_, siblingData) => siblingData?.unitSystem === 'imperial',
                   },
                   options: ['tsp', 'tbsp', 'oz', 'lb', 'cups'].map((value) => ({
-                    label: labels.units[value],
+                    //label: labels.units[value],
+                    label: {
+                      en: translations.en.units[value],
+                      hr: translations.hr.units[value],
+                    },
                     value,
                   })),
                 },
                 {
                   name: 'generalUnit',
-                  label: labels.labels.generalUnit,
+                  //label: labels.labels.generalUnit,
+                  label:{
+                    en: translations.en.labels.generalUnit,
+                    hr: translations.hr.labels.generalUnit,
+                  },
                   type: 'select',
                   required: false,
                   admin: {
                     condition: (_, siblingData) => siblingData?.unitSystem === 'general',
                   },
                   options: ['pieces', 'cloves', 'whole'].map((value) => ({
-                    label: labels.units[value],
+                    //label: labels.units[value],
+                    label: {
+                      en: translations.en.units[value],
+                      hr: translations.hr.units[value],
+                    },
                     value,
                   })),
                 },
                 {
                   name: 'unit',
-                  label: labels.labels.unit,
+                  //label: labels.labels.unit,
+                  label:{
+                    en: translations.en.labels.unit,
+                    hr: translations.hr.labels.unit,
+                  },
                   type: 'text',
                   required: false,
                   admin: {
@@ -193,18 +254,30 @@ export const Recipes: CollectionConfig = {
             {
               name: 'steps',
               type: 'array',
-              labels: labels.arrayLabels.step,
+              //labels: labels.arrayLabels.step,
+              label:{
+                en: translations.en.arrayLabels.step.plural,
+                hr: translations.hr.arrayLabels.step.plural,
+              },
               fields: [
                 {
                   name: 'instruction',
-                  label: labels.labels.instruction,
+                  //label: labels.labels.instruction,
+                  label:{
+                    en: translations.en.labels.instruction,
+                    hr: translations.hr.labels.instruction,
+                  },
                   type: 'textarea',
                   required: true,
                   localized: true,
                 },
                 {
                   name: 'image',
-                  label: labels.labels.image,
+                  //label: labels.labels.image,
+                  label:{
+                    en: translations.en.labels.image,
+                    hr: translations.hr.labels.image,
+                  },
                   type: 'upload',
                   relationTo: 'media',
                 },
@@ -212,7 +285,11 @@ export const Recipes: CollectionConfig = {
             },
             {
               name: 'content',
-              label: labels.labels.content,
+              //label: labels.labels.content,
+              label:{
+                en: translations.en.labels.content,
+                hr: translations.hr.labels.content,
+              },
               type: 'richText',
               localized: true,
               editor: lexicalEditor({
@@ -230,32 +307,56 @@ export const Recipes: CollectionConfig = {
           ],
         },
         {
-          label: labels.tabs.meta,
+          //label: labels.tabs.meta,
+          label:{
+            en: translations.en.tabs.meta,
+            hr: translations.hr.tabs.meta,
+          },
           fields: [
             {
               name: 'cookingTime',
-              label: labels.labels.cookingTime,
+              //label: labels.labels.cookingTime,
+              label:{
+                en: translations.en.labels.cookingTime,
+                hr: translations.hr.labels.cookingTime,
+              },
               type: 'number',
             },
             {
               name: 'servings',
-              label: labels.labels.servings,
+              //label: labels.labels.servings,
+              label:{
+                en: translations.en.labels.servings,
+                hr: translations.hr.labels.servings,
+              },
               type: 'number',
               required: true,
             },
             {
               name: 'difficulty',
-              label: labels.labels.difficulty,
+              //label: labels.labels.difficulty,
+              label:{
+                en: translations.en.labels.difficulty,
+                hr: translations.hr.labels.difficulty,
+              },
               type: 'select',
               options: ['Easy', 'Medium', 'Hard'].map((value) => ({
-                label: labels.labels.difficulties[value],
+                //label: labels.labels.difficulties[value],
+                label: {
+                  en: translations.en.labels.difficulties[value],
+                  hr: translations.hr.labels.difficulties[value],
+                },
                 value,
               })),
               defaultValue: 'Easy',
             },
             {
               name: 'relatedRecipes',
-              label: labels.labels.relatedRecipes,
+              //label: labels.labels.relatedRecipes,
+              label:{
+                en: translations.en.labels.relatedRecipes,
+                hr: translations.hr.labels.relatedRecipes,
+              },
               type: 'relationship',
               hasMany: true,
               relationTo: 'recipes',
@@ -268,7 +369,11 @@ export const Recipes: CollectionConfig = {
             },
             {
               name: 'categories',
-              label: labels.labels.categories,
+              //label: labels.labels.categories,
+              label:{
+                en: translations.en.labels.categories,
+                hr: translations.hr.labels.categories,
+              },
               type: 'relationship',
               hasMany: true,
               relationTo: 'categories',
@@ -292,7 +397,10 @@ export const Recipes: CollectionConfig = {
         },
         {
           name: 'meta',
-          label: labels.tabs.seo,
+          label:{
+            en: translations.en.tabs.seo,
+            hr: translations.hr.tabs.seo,
+          },
           fields: [
             OverviewField({
               titlePath: 'meta.title',
@@ -314,7 +422,7 @@ export const Recipes: CollectionConfig = {
     {
       name: 'publishedAt',
       type: 'date',
-      label: labels['date-published'],
+      //label: labels['date-published']
       admin: {
         date: {
           pickerAppearance: 'dayAndTime',
@@ -334,7 +442,11 @@ export const Recipes: CollectionConfig = {
     },
     {
       name: 'authors',
-      label: labels.author,
+      //label: labels.author,
+      label:{
+        en: translations.en.labels.authors,
+        hr: translations.hr.labels.authors,
+      },
       type: 'relationship',
       hasMany: true,
       relationTo: 'users',
@@ -344,7 +456,11 @@ export const Recipes: CollectionConfig = {
     },
     {
       name: 'populatedAuthors',
-      label: labels.labels.populatedAuthors,
+      //abel: labels.labels.populatedAuthors,
+      label:{
+        en: translations.en.labels.populatedAuthors,
+        hr: translations.hr.labels.populatedAuthors,
+      },
       type: 'array',
       access: { update: () => false },
       admin: {

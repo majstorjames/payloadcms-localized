@@ -26,6 +26,10 @@ import {
   PreviewField,
 } from '@payloadcms/plugin-seo/fields'
 import { slugField } from '@/fields/slug'
+import { getAdminLabels } from '@/i18n/getAdminLabels'
+
+const translations = getAdminLabels()
+
 
 export const Posts: CollectionConfig = {
   slug: 'posts',
@@ -65,14 +69,27 @@ export const Posts: CollectionConfig = {
       type: 'text',
       localized: true,
       required: true,
+      // label: label.title,    },
+      label: {
+        en: translations.en.labels.title,
+        hr: translations.hr.labels.title,
+      }
     },
-    {
+    {    
       type: 'tabs',
       tabs: [
         {
+          label: {
+            en: translations.en.tabs.content,
+            hr: translations.hr.tabs.content,
+          },
           fields: [
             {
               name: 'content',
+              label: {
+                en: translations.en.labels.content,
+                hr: translations.hr.labels.content,
+              },
               type: 'richText',
               localized: true,
               editor: lexicalEditor({
@@ -87,11 +104,11 @@ export const Posts: CollectionConfig = {
                   ]
                 },
               }),
-              label: false,
+              //label: false,
               required: true,
             },
           ],
-          label: 'Content',
+          //label: 'Content',
         },
         {
           fields: [
